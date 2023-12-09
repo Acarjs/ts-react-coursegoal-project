@@ -12,9 +12,11 @@ const Header: FC<HeaderProps> = ({ image, children }) => {
   return (
     <section>
       {/* <img src={image.src} alt={image.alt} /> */}
-      <img {...image} /> //you can destruct this way. This is a general REACT
+      <img {...image} />
+
+      {/* you can spread this way. This is a general REACT
       shortcut which will simply take all key value pairs in an object and
-      spread them as props, as key value pairs.
+      spread them as props, as key value pairs. */}
       {children}
     </section>
   )
