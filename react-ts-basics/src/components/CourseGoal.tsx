@@ -1,18 +1,38 @@
-interface CourseGoalProps {
-  title: string
-  description: string
-}
+//----------------------SYNTAX 1--------------
+import { type PropsWithChildren } from 'react'
 
-function CourseGoal({ title, description }: CourseGoalProps) {
+type CourseGoalProps = PropsWithChildren<{ title: string }>
+
+export default function CourseGoal({ title, children }: CourseGoalProps) {
   return (
     <article>
       <div>
         <h2>{title}</h2>
-        <p>{description}</p>
+        {children}
       </div>
       <button>Delete</button>
     </article>
   )
 }
 
-export default CourseGoal
+//---------------Another SYNTAX----------------
+// import { ReactNode, type FC } from 'react'
+
+// interface CourseGoalProps {
+//   title: string
+//   children: ReactNode
+// }
+
+// const CourseGoal: FC<CourseGoalProps> = ({ title, children }) => {
+//   return (
+//     <article>
+//       <div>
+//         <h2>{title}</h2>
+//         {children}
+//       </div>
+//       <button>Delete</button>
+//     </article>
+//   )
+// }
+
+// export default CourseGoal
