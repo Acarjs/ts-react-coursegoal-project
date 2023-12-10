@@ -1,24 +1,31 @@
 //----------------------SYNTAX 1--------------
 // import { type PropsWithChildren } from 'react'
-import { ReactNode } from 'react'
+import { ReactNode } from 'react';
 
 // type CourseGoalProps = PropsWithChildren<{ title: string }>
 
 type CourseGoalProps = {
-  title: string
-  children: ReactNode
-}
+  id: number;
+  title: string;
+  children: ReactNode;
+  onDelete: (id: number) => void;
+};
 
-export default function CourseGoal({ title, children }: CourseGoalProps) {
+export default function CourseGoal({
+  title,
+  children,
+  onDelete,
+  id,
+}: CourseGoalProps) {
   return (
     <article>
       <div>
         <h2>{title}</h2>
         {children}
       </div>
-      <button>Delete</button>
+      <button onClick={() => onDelete(id)}>Delete</button>
     </article>
-  )
+  );
 }
 
 //---------------Another SYNTAX----------------
