@@ -1,7 +1,6 @@
 //----------------------SYNTAX 1--------------
 // import { type PropsWithChildren } from 'react'
 import { ReactNode } from 'react';
-
 // type CourseGoalProps = PropsWithChildren<{ title: string }>
 
 type CourseGoalProps = {

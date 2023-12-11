@@ -10,11 +10,11 @@ type HeaderProps = {
 
 export default function Header({ image, children }: HeaderProps) {
   return (
-    <section>
+    <header>
       {/* <img src={image.src} alt={image.alt} /> */}
       <img {...image} />
       {children}
-    </section>
+    </header>
   );
 }
 
